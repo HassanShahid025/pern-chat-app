@@ -2,9 +2,16 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
-  const authUser = false;
+  const { authUser, isLoading } = useAuthContext();
+
+  console.log("auth user", authUser);
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <div className="p-4 h-screen flex items-center justify-center">
