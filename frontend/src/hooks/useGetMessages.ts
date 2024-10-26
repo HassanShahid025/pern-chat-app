@@ -13,7 +13,8 @@ const useGetMessages = () => {
       setMessages([]);
       try {
         const res = await fetch(
-          `/api/v1/messages/getMessages/${selectedConversation.id}`
+          `/api/v1/messages/getMessages/${selectedConversation.id}`,
+          { credentials: "include" }
         );
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "An error occurred");

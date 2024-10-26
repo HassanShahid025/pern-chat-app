@@ -23,6 +23,7 @@ const useSignup = () => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(inputs),
+				credentials: "include",
 			});
 			const data = await res.json();
 

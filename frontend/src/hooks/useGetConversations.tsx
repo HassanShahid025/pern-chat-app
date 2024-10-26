@@ -10,7 +10,7 @@ const useGetConversations = () => {
     const getConversations = async () => {
       setLoading(true);
       try {
-        const res = await fetch("/api/v1/messages/getUserAllConversations");
+        const res = await fetch("/api/v1/messages/getUserAllConversations",{credentials: "include",});
         const data = await res.json();
         if (data.error) {
           throw new Error(data.error);
