@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
     "start": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts"
